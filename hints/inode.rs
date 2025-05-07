@@ -17,3 +17,10 @@ struct Inode {
 	iptr: u32,
 	inum: u32,
 }
+
+//inode* get_inode(int inum);
+
+fn get_inode(inum: u32) -> Inode
+{
+	return;
+}
