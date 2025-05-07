@@ -9,6 +9,6 @@ typedef struct dirent {
 */
 
 struct Dirent {
-	name: ArrayString<DIR_NAME>;
-	inum: u16;
+	name: ArrayString<DIR_NAME>,
+	inum: u16,
 }
