@@ -24,3 +24,7 @@ fn get_inode(inum: u32) -> Inode
 {
 	return;
 }
+
+//int inode_find(const char *path);
+//int alloc_inode(const char *path);
+
