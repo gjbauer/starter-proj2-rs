@@ -1,5 +1,5 @@
 use arrayvec::ArrayString;
-const DIR_NAME: u16 = 48;
+const DIR_NAME: usize = 48;
 
 struct Dirent {
 	name: ArrayString<DIR_NAME>,
