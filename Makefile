@@ -6,11 +6,8 @@ HDRS := $(wildcard *.h)
 CFLAGS := -g 
 LDLIBS := 
 
-nufs: $(OBJS)
-	cargo run
-
-%.o: %.c $(HDRS)
-	gcc $(CFLAGS) -c -o $@ $<
+nufs:
+	cargo build
 
 clean: unmount
 	rm -f nufs *.o test.log data.nufs mkfs/mkfs
@@ -19,19 +16,16 @@ clean: unmount
 hex:
 	vim data.nufs
 
-#mount: nufs
-#	mkdir -p mnt || true
+mount: nufs
+	mkdir -p mnt || true
+	cargo run --quiet
 #	./nufs -s -f mnt data.nufs
 
-#unmount:
-#	fusermount -u mnt || true
+unmount:
+	fusermount -u mnt || true
 
 test: nufs
 	perl test.pl
-
-#gdb: nufs
-#	mkdir -p mnt || true
-#	gdb --args ./nufs -s -f mnt data.nufs
 
 open:
 	nvim -p src/*.rs
