@@ -14,6 +14,10 @@ pub fn inode_deserialize(mmap: &memmap2::MmapMut, num: usize) -> Inode {
 	// TODO: Implement inode_deserialize...
 }
 
+pub fn inode_serialize(mmap: &mut memmap2::MmapMut, d: Inode) -> u32 {
+	// TODO: Implement inode_serialize...
+}
+
 pub fn inode_read(d: Inode, mmap: &memmap2::MmapMut) -> (Vec<u8>, u32) {
 	// TODO: Read from an inode...
 }
