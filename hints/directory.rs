@@ -10,3 +10,8 @@ pub struct Dirent {
 pub fn dirent_deserialize(mmap: &memmap2::MmapMut, offset: usize) -> Dirent {
 	// TODO: Implement dirent_deserialize...
 }
+
+pub fn dirent_serialize(mmap: &mut memmap2::MmapMut, offset: usize, ent: Dirent) -> u32 {
+	// TODO: Implement dirent_serialize...
+}
+
