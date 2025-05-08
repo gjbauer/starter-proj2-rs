@@ -1,5 +1,5 @@
 
-const ins: usize = 5 * 4096;	// get_root_start();
+const ins: usize = 2 * 4096;	// get_root_start();
 
 pub struct Inode {
 	pub refs: u32,
@@ -10,7 +10,6 @@ pub struct Inode {
 	pub inum: u32,
 }
 
-// TODO: Implement inode_deserialize...
 pub fn inode_deserialize(mmap: &memmap2::MmapMut, num: usize) -> Inode {
 	let offset: usize = num * std::mem::size_of::<Inode>();
 	
