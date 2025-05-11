@@ -1,5 +1,5 @@
 [package]
-name = "cs4310_proj2_rs"
+name = "nufs"
 version = "0.1.0"
 edition = "2024"
 
@@ -7,8 +7,8 @@ edition = "2024"
 clap = "4.5.38"
 env_logger = "0.11.8"
 fuse = "0.3.1"
-fuser = "0.15.1"
 libc = "0.2.172"
+memmap2 = "0.9.5"
 pkg-config = "0.3.32"
 time = "0.3.41"
 
