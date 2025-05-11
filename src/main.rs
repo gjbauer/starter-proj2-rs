@@ -2,6 +2,7 @@ extern crate fuse;
 extern crate libc;
 extern crate time;
 
+use std::fs::OpenOptions;
 use memmap2::Mmap;
 use std::env;
 use std::path::Path;
@@ -22,12 +23,12 @@ impl Filesystem for Nufs {
 	}
 }
 
-fn main() {
+fn main()  -> Result<(), Box<dyn std::error::Error>> {
 	let mountpoint = match env::args().nth(1) {
 		Some(path) => path,
 		None => {
 			println!("Usage: {} <MOUNTPOINT>", env::args().nth(0).unwrap());
-			return;
+			return Ok(());
 		}
 	};
 	
@@ -39,7 +40,8 @@ fn main() {
 		.open("data.nufs")?;
 	
 	// TODO: Create a memory map for the file
-	let mmap: memmap2::MmapMut = unsafe {  };
+	//let mmap: memmap2::MmapMut = unsafe {  };
 	
 	fuse::mount(Nufs, &mountpoint, &[]);
+	Ok(())
 }
