@@ -2,6 +2,7 @@ extern crate fuse;
 extern crate libc;
 extern crate time;
 
+use memmap2::Mmap;
 use std::env;
 use std::path::Path;
 use std::slice;
