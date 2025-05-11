@@ -15,7 +15,6 @@ mod hash;
 struct Nufs;
 
 impl Filesystem for Nufs {
-	// TODO: Put prototype functions here...
 	fn getattr(&mut self, _req: &Request, ino: u64, reply: ReplyAttr) {
 		println!("getattr(ino={})", ino);
 		reply.error(ENOSYS);
