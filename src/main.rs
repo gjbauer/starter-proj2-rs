@@ -19,14 +19,14 @@ fn main() {
 	};
 	
 	// Open the file
-	/*let file = OpenOptions::new()
+	let file = OpenOptions::new()
 		.read(true)
 		.write(true)
 		.create(true)
 		.open("data.nufs")?;
 	
 	// TODO: Create a memory map for the file
-	let mmap: memmap2::MmapMut = unsafe {  };*/
+	let mmap: memmap2::MmapMut = unsafe {  };
 	
 	fuse::mount(Nufs, &mountpoint, &[]);
 }
